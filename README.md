@@ -50,5 +50,5 @@ cd web && npm install && npm run dev
 - [x] Embeddings + vector search
 - [x] Ask endpoint (RAG pipeline + guardrail)
 - [x] Keyword baseline + eval set
-- [ ] React frontend
+- [x] React frontend
 - [ ] Deploy (Render + Vercel + Supabase)

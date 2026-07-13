@@ -1,0 +1,110 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --border: #e3e6ea;
+  --text: #16181d;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+header h1 { margin: 0 0 4px; font-size: 28px; }
+header p { margin: 0 0 24px; color: var(--muted); }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.panel h2 { margin: 0 0 12px; font-size: 16px; }
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.panel-head h2 { margin: 0; }
+
+.upload-btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.upload-btn:hover { background: var(--accent-dark); }
+
+.doc-list { list-style: none; margin: 0; padding: 0; }
+.doc-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+.doc-name { font-weight: 500; }
+
+.ask-form { display: flex; gap: 8px; }
+.ask-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+}
+.ask-form input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.ask-form button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.ask-form button:disabled { opacity: 0.5; cursor: default; }
+
+.answer {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f0f6ff;
+  border: 1px solid #cfe0fc;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.answer.not-found { background: #fafafa; border-color: var(--border); color: var(--muted); }
+.answer p { margin: 0; }
+
+.sources { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.source-chip {
+  font-size: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  color: var(--muted);
+}
+
+.muted { color: var(--muted); font-size: 14px; }
+.error { color: #b91c1c; font-size: 14px; }
