@@ -1,0 +1,12 @@
+[
+  {"question": "how does she turn spoken meetings into written summaries?", "expect_substring": "meeting audio into"},
+  {"question": "what machine learning method grades the importance of tasks in MeetPilot?", "expect_substring": "Linear SVM"},
+  {"question": "which cloud platforms has she deployed on?", "expect_substring": "Vercel"},
+  {"question": "what did she work on during her IBM internship?", "expect_substring": "AI agents"},
+  {"question": "which design tool did she use at CodSoft?", "expect_substring": "Figma"},
+  {"question": "what is her degree and branch?", "expect_substring": "Artificial Intelligence & Data Science"},
+  {"question": "which visualization tools does she know?", "expect_substring": "Tableau"},
+  {"question": "what chatbot did she build about the environment?", "expect_substring": "water conservation"},
+  {"question": "how did she do in school exams?", "expect_substring": "91.4"},
+  {"question": "which IIT certified her data science course?", "expect_substring": "IIT Madras"}
+]

@@ -24,7 +24,7 @@ The app includes a keyword-search baseline so you can compare side by side. Sema
 
 Retrieval and generation are evaluated separately (numbers updated as the eval set grows):
 
-- **Retrieval**: hit-rate@k on a labeled set of question → correct-chunk pairs, vs the keyword baseline
+- **Retrieval**: hit-rate@k on a labeled set of question → correct-chunk pairs, vs the keyword baseline. Current run (small starter corpus): semantic 10/10, keyword baseline 2/10 — note: with a corpus this small hit@4 flatters the semantic side (k ≈ corpus size), so treat the keyword number as the real signal until the corpus grows
 - **Generation**: faithfulness spot-checks — does the answer only use facts present in the retrieved chunks?
 - **Guardrail**: if no chunk clears the similarity threshold, DocSage says it doesn't know instead of guessing
 
@@ -46,9 +46,9 @@ cd web && npm install && npm run dev
 ## Status
 
 - [x] Project scaffold, database with pgvector
-- [ ] PDF ingestion + chunking
-- [ ] Embeddings + vector search
-- [ ] Ask endpoint (RAG pipeline + guardrail)
-- [ ] Keyword baseline + eval set
+- [x] PDF ingestion + chunking
+- [x] Embeddings + vector search
+- [x] Ask endpoint (RAG pipeline + guardrail)
+- [x] Keyword baseline + eval set
 - [ ] React frontend
 - [ ] Deploy (Render + Vercel + Supabase)
