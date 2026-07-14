@@ -1,0 +1,19 @@
+# Render deploys the Flask API from this file (Blueprint).
+# The database is Supabase (pgvector) — its URL is set as a secret env var.
+services:
+  - type: web
+    name: docsage-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # 1 worker + long timeout: the first request loads the embedding model (~90MB).
+    startCommand: gunicorn --workers 1 --timeout 120 --bind 0.0.0.0:$PORT api.app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.7"
+      - key: GROQ_API_KEY
+        sync: false        # set in the Render dashboard
+      - key: DATABASE_URL
+        sync: false        # Supabase connection string
+      - key: ALLOWED_ORIGIN
+        sync: false        # the Vercel frontend URL

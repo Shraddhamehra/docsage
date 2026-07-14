@@ -13,7 +13,11 @@ from api.db import get_conn, init_schema
 from api.store import save_document
 
 app = Flask(__name__)
-CORS(app)
+
+# In production only the deployed frontend may call this API; locally, allow anything.
+# ALLOWED_ORIGIN is set in the hosting dashboard (e.g. https://docsage.vercel.app).
+allowed_origin = os.environ.get("ALLOWED_ORIGIN")
+CORS(app, origins=[allowed_origin] if allowed_origin else "*")
 
 MAX_UPLOAD_MB = 20
 app.config["MAX_CONTENT_LENGTH"] = MAX_UPLOAD_MB * 1024 * 1024
