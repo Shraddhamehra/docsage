@@ -2,6 +2,8 @@
 
 I built this to solve my own problem: during placement prep I have dozens of course PDFs (DBMS notes, ML unit PDFs, past papers) and finding "where did we cover normalization vs denormalization?" means scrolling through hundreds of pages. DocSage lets me upload my PDFs and ask questions in plain English — it answers **with citations to the exact page**, so I can trust and verify every answer.
 
+📄 **[Full technical report](REPORT.md)** — architecture, every design decision and the alternative it beat, the evaluation, and what broke along the way.
+
 ## How it works
 
 ```
