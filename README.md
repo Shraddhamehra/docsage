@@ -24,7 +24,7 @@ The app includes a keyword-search baseline so you can compare side by side. Sema
 
 Retrieval and generation are evaluated separately (numbers updated as the eval set grows):
 
-- **Retrieval**: hit-rate@k on a labeled set of question → correct-chunk pairs, vs the keyword baseline. Current run (small starter corpus): semantic 10/10, keyword baseline 2/10 — note: with a corpus this small hit@4 flatters the semantic side (k ≈ corpus size), so treat the keyword number as the real signal until the corpus grows
+- **Retrieval**: hit-rate@4 on 20 labeled question → correct-chunk pairs, measured on a 497-chunk corpus (ML lecture notes + DBMS chapters + a resume): **semantic search 15/20 (75%) vs keyword baseline 0/20**. The eval questions are deliberately paraphrased (no shared words with the answer text) — that's the honest test for semantic retrieval, and it's exactly where keyword search collapses. The 5 semantic misses are logged as tuning targets (chunk size / k / model)
 - **Generation**: faithfulness spot-checks — does the answer only use facts present in the retrieved chunks?
 - **Guardrail**: if no chunk clears the similarity threshold, DocSage says it doesn't know instead of guessing
 

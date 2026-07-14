@@ -13,6 +13,8 @@ def extract_pages(pdf_path: str) -> list[tuple[int, str]]:
     pages = []
     for i, page in enumerate(reader.pages, start=1):
         text = page.extract_text() or ""
+        # some PDFs embed NUL bytes in their text layer — Postgres text can't store them
+        text = text.replace("\x00", "")
         text = " ".join(text.split())  # collapse whitespace/newlines
         if text:
             pages.append((i, text))
